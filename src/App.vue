@@ -1,17 +1,21 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="content">
+    <h1>方式一：鼠标在哪一行，就滚动哪里，如果子table滚动条部到底了，父级滚动条会滑动</h1>
+    <Table1 />
+    <h1>方式二：子table如果展开，可以扩宽父级table的宽度，子table和父table整体滚动</h1>
+    <Table2 />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Table1 from './components/Table1.vue'
+import Table2 from './components/Table2.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Table1,
+    Table2,
   }
 }
 </script>
@@ -24,5 +28,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.content {
+  width: 1200px;
+  overflow: scroll;
+  border: 1px saddlebrown solid;
+  padding: 20px;
 }
 </style>
